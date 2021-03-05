@@ -16,3 +16,13 @@
     # Voir  la liste des enregistrements de faits d’état civil et les marquer comme signer
     # Modification de l’information d’un enregistrement de fait d’état civil
     # Ajouter et modifier un employé
+
+
+# Installation
+
+
+    # git clone  https://github.com/Djessa/vital-management-system.git
+    # cd vital-management-system
+    # composer install
+    # php bin/console d:d:c
+    # php bin/console d:m:m
