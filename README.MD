@@ -1,6 +1,6 @@
 ### INFORMATISATION DU SYSTEME D’ETAT CIVIL
 
-## Il y a une partie réservée aux employées de la commune dans laquelle existent les fonctionnalités suivant :
+# Il y a une partie réservée aux employées de la commune dans laquelle existent les fonctionnalités suivant :
 
 
     # Déclarer une nouvelle naissance 
@@ -10,7 +10,7 @@
     # Imprimer une d’acte d’état civil  demandé par une personne.
     # Voir la liste des actes d’états civils demandés 
 
-## Il y a une partie réservée à l’officier d’état civil dans laquelle existent les fonctionnalités suivant :
+# Il y a une partie réservée à l’officier d’état civil dans laquelle existent les fonctionnalités suivant :
 
 
     # Voir  la liste des enregistrements de faits d’état civil et les marquer comme signer
