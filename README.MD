@@ -7,5 +7,5 @@
 ### composer install
 ### yarn install  (// npm install)
 ### .env configuration
-### php bin/console d:d:c
-### php bin/console d:m:m
+### php bin/console doctrine:database:create
+### php bin/console doctrine:migrations:migrate
