@@ -1,7 +1,6 @@
 # INFORMATISATION DU SYSTEME D’ETAT CIVIL
 
-### Installation
-
+    ### Installation
 
     # git clone  https://github.com/Djessa/vital-management-system.git
     # cd vital-management-system
