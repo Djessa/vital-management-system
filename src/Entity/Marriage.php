@@ -28,6 +28,28 @@ class Marriage
      */
     private $lieu;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Person::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $man;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Person::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $woman;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Person::class)
+     */
+    private $witness_man;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Person::class)
+     */
+    private $witness_woman;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,6 +75,54 @@ class Marriage
     public function setLieu(string $lieu): self
     {
         $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    public function getMan(): ?Person
+    {
+        return $this->man;
+    }
+
+    public function setMan(?Person $man): self
+    {
+        $this->man = $man;
+
+        return $this;
+    }
+
+    public function getWoman(): ?Person
+    {
+        return $this->woman;
+    }
+
+    public function setWoman(?Person $woman): self
+    {
+        $this->woman = $woman;
+
+        return $this;
+    }
+
+    public function getWitnessMan(): ?Person
+    {
+        return $this->witness_man;
+    }
+
+    public function setWitnessMan(?Person $witness_man): self
+    {
+        $this->witness_man = $witness_man;
+
+        return $this;
+    }
+
+    public function getWitnessWoman(): ?Person
+    {
+        return $this->witness_woman;
+    }
+
+    public function setWitnessWoman(?Person $witness_woman): self
+    {
+        $this->witness_woman = $witness_woman;
 
         return $this;
     }

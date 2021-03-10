@@ -33,6 +33,18 @@ class Divorce
      */
     private $date_decision;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Person::class, cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $man;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Person::class, cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $woman;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +82,30 @@ class Divorce
     public function setDateDecision(\DateTimeInterface $date_decision): self
     {
         $this->date_decision = $date_decision;
+
+        return $this;
+    }
+
+    public function getMan(): ?Person
+    {
+        return $this->man;
+    }
+
+    public function setMan(Person $man): self
+    {
+        $this->man = $man;
+
+        return $this;
+    }
+
+    public function getWoman(): ?Person
+    {
+        return $this->woman;
+    }
+
+    public function setWoman(Person $woman): self
+    {
+        $this->woman = $woman;
 
         return $this;
     }
