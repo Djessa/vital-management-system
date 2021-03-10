@@ -33,6 +33,12 @@ class Birth
      */
     private $judgment_number;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Person::class, inversedBy="birth", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $person;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +76,18 @@ class Birth
     public function setJudgmentNumber(string $judgment_number): self
     {
         $this->judgment_number = $judgment_number;
+
+        return $this;
+    }
+
+    public function getPerson(): ?Person
+    {
+        return $this->person;
+    }
+
+    public function setPerson(Person $person): self
+    {
+        $this->person = $person;
 
         return $this;
     }

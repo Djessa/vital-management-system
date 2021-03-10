@@ -53,6 +53,11 @@ class Person
      */
     private $residence;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Birth::class, mappedBy="person", cascade={"persist", "remove"})
+     */
+    private $birth;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -138,6 +143,23 @@ class Person
     public function setResidence(?string $residence): self
     {
         $this->residence = $residence;
+
+        return $this;
+    }
+
+    public function getBirth(): ?Birth
+    {
+        return $this->birth;
+    }
+
+    public function setBirth(Birth $birth): self
+    {
+        // set the owning side of the relation if necessary
+        if ($birth->getPerson() !== $this) {
+            $birth->setPerson($this);
+        }
+
+        $this->birth = $birth;
 
         return $this;
     }
