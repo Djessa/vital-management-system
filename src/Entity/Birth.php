@@ -39,7 +39,23 @@ class Birth
      */
     private $person;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Person::class)
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $declarant;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Person::class, inversedBy="sons")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $father;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Person::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $mother;
 
     public function getId(): ?int
     {
@@ -94,4 +110,39 @@ class Birth
         return $this;
     }
 
+    public function getDeclarant(): ?Person
+    {
+        return $this->declarant;
+    }
+
+    public function setDeclarant(?Person $declarant): self
+    {
+        $this->declarant = $declarant;
+
+        return $this;
+    }
+
+    public function getFather(): ?Person
+    {
+        return $this->father;
+    }
+
+    public function setFather(?Person $father): self
+    {
+        $this->father = $father;
+
+        return $this;
+    }
+
+    public function getMother(): ?Person
+    {
+        return $this->mother;
+    }
+
+    public function setMother(?Person $mother): self
+    {
+        $this->mother = $mother;
+
+        return $this;
+    }
 }
