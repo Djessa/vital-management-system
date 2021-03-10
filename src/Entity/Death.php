@@ -33,6 +33,12 @@ class Death
      */
     private $reason;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Person::class, cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $person;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +76,18 @@ class Death
     public function setReason(string $reason): self
     {
         $this->reason = $reason;
+
+        return $this;
+    }
+
+    public function getPerson(): ?Person
+    {
+        return $this->person;
+    }
+
+    public function setPerson(Person $person): self
+    {
+        $this->person = $person;
 
         return $this;
     }
