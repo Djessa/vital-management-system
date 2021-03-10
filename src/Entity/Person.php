@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PersonRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -57,6 +59,12 @@ class Person
      * @ORM\OneToOne(targetEntity=Birth::class, mappedBy="person", cascade={"persist", "remove"})
      */
     private $birth;
+
+
+    public function __construct()
+    {
+        $this->declarants = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
